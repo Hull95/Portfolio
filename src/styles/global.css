@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+@tailwind utilities;
+
+:root {
+    --main-color-blue: #05314b;
+    --main-color-green: #28df7d;
+    --main-color-white: #ffffff;
+}
+
+.bcg-main-blue {
+    background-color: var(--main-color-blue);
+}
+
+.text-main-green {
+    color: var(--main-color-green);
+}
+
+.navbar {
+    background-color: var(--main-color-blue);
+    color: var(--main-color-green);
+}
