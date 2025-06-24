@@ -1,13 +1,16 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+'use client'
+
+import { useState } from 'react'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Image from "next/image";
+import Image from "next/image"
 import profileImage from "../../public/images/stefan_vranjes_profile.jpeg"
 
 const navigation = [
-    { name: 'About', href: '#about', current: true },
-    { name: 'Skills', href: '#skills', current: false },
-    { name: 'Projects', href: '#projects', current: false },
-    { name: 'Contact', href: '#contact', current: false },
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' },
 ]
 
 function classNames(...classes: string[]) {
@@ -15,79 +18,50 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
+    const [activeSection, setActiveSection] = useState('About')
+
+    const handleClick = (name: string, href: string) => {
+        setActiveSection(name)
+        const target = document.querySelector(href)
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
+
     return (
         <Disclosure as="nav" className="sticky top-0 z-50 navbar">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                        <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
-                            <span className="absolute -inset-0.5" />
-                            <span className="sr-only">Open main menu</span>
-                            <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" />
-                            <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-open:block" />
+                        <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                            <Bars3Icon className="block h-6 w-6 group-data-open:hidden" aria-hidden="true" />
+                            <XMarkIcon className="hidden h-6 w-6 group-data-open:block" aria-hidden="true" />
                         </DisclosureButton>
                     </div>
+
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-center">
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
-                                    <a
+                                    <button
                                         key={item.name}
-                                        href={item.href}
-                                        aria-current={item.current ? 'page' : undefined}
+                                        onClick={() => handleClick(item.name, item.href)}
                                         className={classNames(
-                                            item.current ? 'bcg-main-blue text-main-green' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                            'rounded-md px-3 py-2 text-sm font-medium',
+                                            activeSection === item.name
+                                                ? 'text-main-green bcg-main-blue'
+                                                : 'text-gray-300  hover:text-white',
+                                            'rounded-md px-3 py-2 font-medium text-bas capitalize button-hover-navbar'
                                         )}
                                     >
                                         {item.name}
-                                    </a>
+                                    </button>
                                 ))}
                             </div>
                         </div>
                     </div>
+
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                        <Menu as="div" className="relative ml-3">
-                            <div>
-                                <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
-                                    <span className="absolute -inset-1.5" />
-                                    <Image
-                                        alt="Stefan Vranjes - Image"
-                                        src={profileImage}
-                                        className="size-8 rounded-full"
-                                    />
-                                </MenuButton>
-                            </div>
-                            <MenuItems
-                                transition
-                                className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
-                            >
-                                <MenuItem>
-                                    <a
-                                        href="#"
-                                        className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
-                                    >
-                                        Your Profile
-                                    </a>
-                                </MenuItem>
-                                <MenuItem>
-                                    <a
-                                        href="#"
-                                        className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
-                                    >
-                                        Settings
-                                    </a>
-                                </MenuItem>
-                                <MenuItem>
-                                    <a
-                                        href="#"
-                                        className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
-                                    >
-                                        Sign out
-                                    </a>
-                                </MenuItem>
-                            </MenuItems>
-                        </Menu>
+                        <Image src={profileImage} alt="Profile" className="rounded-full size-8" />
                     </div>
                 </div>
             </div>
@@ -97,12 +71,13 @@ export default function Navbar() {
                     {navigation.map((item) => (
                         <DisclosureButton
                             key={item.name}
-                            as="a"
-                            href={item.href}
-                            aria-current={item.current ? 'page' : undefined}
+                            as="button"
+                            onClick={() => handleClick(item.name, item.href)}
                             className={classNames(
-                                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                'block rounded-md px-3 py-2 text-base font-medium',
+                                activeSection === item.name
+                                    ? 'text-main-green'
+                                    : 'text-gray-300  hover:text-white',
+                                'block rounded-md px-3 py-2 text-base font-medium'
                             )}
                         >
                             {item.name}
