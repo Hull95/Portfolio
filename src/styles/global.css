@@ -3,9 +3,17 @@
 
 :root {
     --main-color-blue: #05314b;
+    --main-color-blue-hover: #448DB7;
+    --main-color-blue-darker: #0A2737;
     --main-color-green: #28df7d;
+    --main-color-green-hover: #7CF6B5;
+    --main-color-green-darker: #17A559;
     --main-color-white: #ffffff;
 }
+
+/*body {*/
+/*    background-color: var(--main-color-blue-hover);*/
+/*}*/
 
 .bcg-main-blue {
     background-color: var(--main-color-blue);
@@ -17,5 +25,17 @@
 
 .navbar {
     background-color: var(--main-color-blue);
+    color: var(--main-color-green);
+}
+.navbar .button-hover-navbar {
+    text-transform: uppercase;
+}
+
+.navbar .button-hover-navbar:hover {
+    background: var(--main-color-blue-darker)!important;
+    cursor: pointer;
+}
+
+section h2 {
     color: var(--main-color-green);
 }

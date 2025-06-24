@@ -49,8 +49,8 @@ export default function Navbar() {
                                         className={classNames(
                                             activeSection === item.name
                                                 ? 'text-main-green bcg-main-blue'
-                                                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                            'rounded-md px-3 py-2 text-sm font-medium'
+                                                : 'text-gray-300  hover:text-white',
+                                            'rounded-md px-3 py-2 font-medium text-bas capitalize button-hover-navbar'
                                         )}
                                     >
                                         {item.name}
@@ -75,8 +75,8 @@ export default function Navbar() {
                             onClick={() => handleClick(item.name, item.href)}
                             className={classNames(
                                 activeSection === item.name
-                                    ? 'bg-gray-900 text-white'
-                                    : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                    ? 'text-main-green'
+                                    : 'text-gray-300  hover:text-white',
                                 'block rounded-md px-3 py-2 text-base font-medium'
                             )}
                         >
