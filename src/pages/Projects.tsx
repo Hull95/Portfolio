@@ -1,21 +1,21 @@
-interface Project {
-    name: string
-    description: string
-    image: string
-}
+// interface Project {
+//     name: string
+//     description: string
+//     image: string
+// }
 
-const projects: Project[] = [
-    {
-        name: "GIS Platform",
-        description: "Modular GIS system for spatial data management.",
-        image: "/images/gis.png",
-    },
-    {
-        name: "Workflow App",
-        description: "Workflow automation tool for internal teams.",
-        image: "/images/workflow.png",
-    },
-]
+// const projects: Project[] = [
+//     {
+//         name: "GIS Platform",
+//         description: "Modular GIS system for spatial data management.",
+//         image: "/images/gis.png",
+//     },
+//     {
+//         name: "Workflow App",
+//         description: "Workflow automation tool for internal teams.",
+//         image: "/images/workflow.png",
+//     },
+// ]
 
 export default function Projects() {
     return (
