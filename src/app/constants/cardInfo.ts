@@ -1,4 +1,4 @@
-import {ProjectType} from "@/pages/types/projectType";
+import {ProjectType} from "@/app/types/projectType";
 
 export const CardsInfo: ProjectType[] = [
     {

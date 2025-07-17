@@ -1,4 +1,4 @@
-import { CardsInfo } from "@/pages/constants/cardInfo";
+import { CardsInfo } from "@/app/constants/cardInfo";
 
 export default function Projects() {
     return (
