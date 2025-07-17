@@ -1,5 +1,6 @@
-import type { Metadata } from 'next'
+import type {Metadata} from 'next'
 import '../styles/global.css'
+import '../styles/index.css'
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
@@ -10,10 +11,10 @@ export const metadata: Metadata = {
     }
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
         <html lang="en">
-        <head ><title>Stefan Vranjes - Portfolio</title></head>
+        <head><title>Stefan Vranjes - Portfolio</title></head>
         <body>
         <Navbar/>
         <main className="px-6 py-10 max-w-5xl mx-auto">{children}</main>

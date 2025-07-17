@@ -1,0 +1,17 @@
+span {
+    color: var(--main-color-green);
+}
+
+body .button-resume:hover {
+    background-color: var(--main-color-blue-hover);
+    color:var(--main-color-green-hover)
+}
+
+body .button-resume {
+    cursor: pointer;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 14px;
+}

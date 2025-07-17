@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 @tailwind utilities;
-
 :root {
     --main-color-blue: #05314b;
     --main-color-blue-hover: #448DB7;
@@ -11,9 +10,34 @@
     --main-color-white: #ffffff;
 }
 
-/*body {*/
-/*    background-color: var(--main-color-blue-hover);*/
-/*}*/
+h1 {
+    font-size: clamp(4rem, 5vw, 3rem);
+    font-weight:800;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+h4 {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+h5 {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+h6 {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+p {
+    font-weight: 300;
+}
 
 .bcg-main-blue {
     background-color: var(--main-color-blue);
@@ -23,12 +47,13 @@
     color: var(--main-color-green);
 }
 
+.text-blue-color-light {
+    color: var(--main-color-blue);
+}
+
 .navbar {
     background-color: var(--main-color-blue);
     color: var(--main-color-green);
-}
-.navbar .button-hover-navbar {
-    text-transform: uppercase;
 }
 
 .navbar .button-hover-navbar:hover {
