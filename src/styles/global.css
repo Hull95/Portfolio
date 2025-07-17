@@ -11,12 +11,12 @@
 }
 
 h1 {
-    font-size: clamp(4rem, 5vw, 3rem);
+    font-size: clamp(5.5rem, 5vw, 3rem);
     font-weight:800;
 }
 
 h2 {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: clamp(3.5rem, 4vw, 2.5rem);
 }
 
 h3 {
@@ -54,6 +54,7 @@ p {
 .navbar {
     background-color: var(--main-color-blue);
     color: var(--main-color-green);
+    font-size: 19px;
 }
 
 .navbar .button-hover-navbar:hover {

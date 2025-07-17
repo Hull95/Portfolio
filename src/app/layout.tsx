@@ -17,7 +17,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         <head><title>Stefan Vranjes - Portfolio</title></head>
         <body>
         <Navbar/>
-        <main className="px-6 py-10 max-w-5xl mx-auto">{children}</main>
+        <main className="px-3 py-4 max-w-5xl mx-auto">{children}</main>
         </body>
         </html>
     )
