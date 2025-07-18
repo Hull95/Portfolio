@@ -64,4 +64,5 @@ p {
 
 section h2 {
     color: var(--main-color-green);
+    padding-top: 15px;
 }
