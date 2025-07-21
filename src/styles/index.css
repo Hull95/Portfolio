@@ -5,9 +5,10 @@ span {
 body .section-about p {
     font-size: 30px;
 }
+
 body .button-resume:hover {
-    background-color: var(--main-color-blue-hover);
-    color:var(--main-color-green-hover)
+    background-color: var(--main-color-green-hover);
+    color:var(--main-color-white)
 }
 
 body .button-resume {

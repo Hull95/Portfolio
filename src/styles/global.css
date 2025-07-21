@@ -43,12 +43,24 @@ p {
     background-color: var(--main-color-blue);
 }
 
+.bcg-main-green {
+    background-color: var(--main-color-green);
+}
+
 .text-main-green {
     color: var(--main-color-green);
 }
 
 .text-blue-color-light {
     color: var(--main-color-blue);
+}
+
+.section-background {
+    background-color: var(--main-color-blue);
+}
+
+.text-white-color-light {
+    color: var(--main-color-white);
 }
 
 .navbar {

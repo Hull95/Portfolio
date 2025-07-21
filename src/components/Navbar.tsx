@@ -3,8 +3,6 @@
 import { useState } from 'react'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Image from "next/image"
-import profileImage from "../../public/images/stefan_vranjes_profile.jpeg"
 
 const navigation = [
     { name: 'About', href: '#about' },
@@ -58,10 +56,6 @@ export default function Navbar() {
                                 ))}
                             </div>
                         </div>
-                    </div>
-
-                    <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                        <Image src={profileImage} alt="Profile" className="rounded-full size-8" />
                     </div>
                 </div>
             </div>

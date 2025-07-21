@@ -6,7 +6,9 @@ import Skills from "@/pages/Skills";
 export default function Home() {
     return (
         <div className="w-full">
-            <About />
+            <div className="w-full section-background">
+                <About />
+            </div>
             <Skills />
             <Projects />
             <Contact />
