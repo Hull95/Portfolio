@@ -10,7 +10,7 @@ export default function About() {
     return (
         <section
             id="about"
-            className="min-h-[500px] py-6 section-about w-full mx-0 px-4 md:px-7 scroll-mt-20 md:scroll-mt-32 flex items-center">
+            className="min-h-[500px] py-6 section-about w-full mx-0 px-4 md:px-10 scroll-mt-20 md:scroll-mt-32 flex items-center pb-0">
             <div className="flex flex-col md:flex-row w-full gap-10 md:gap-0 items-center justify-between">
                 <div className="w-full md:w-[58%] flex flex-col justify-center pl-0 md:pl-[70px]">
                     <div className="flex gap-4 items-center">
@@ -47,7 +47,7 @@ export default function About() {
                         alt="Profile"
                         width={300}
                         height={300}
-                        className="w-full max-w-[90%] sm:max-w-[60%] md:max-w-[95%] lg:max-w-[80%] xl:max-w-[70%] 2xl:max-w-[70%] h-auto object-contain"                    />
+                        className="w-full max-w-[90%] sm:max-w-[60%] md:max-w-[95%] lg:max-w-[80%] xl:max-w-[70%] 2xl:max-w-[70%] h-auto object-contain" />
                 </div>
             </div>
         </section>

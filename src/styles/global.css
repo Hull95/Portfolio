@@ -55,6 +55,10 @@ p {
     color: var(--main-color-blue);
 }
 
+.border-main-green {
+    border-color: var(--main-color-green) !important;
+}
+
 .section-background {
     background-color: var(--main-color-blue);
 }
