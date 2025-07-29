@@ -4,7 +4,6 @@ import Projects from "@/pages/Projects"
 import Contact from "@/pages/Contact"
 import Skills from "@/pages/Skills";
 import ExperienceSection from "@/components/ExperienceSection";
-import Education from "@/pages/Education";
 import TechnologySection from "@/components/TechnologySection";
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
             <TechnologySection />
             <Skills />
             <ExperienceSection />
-            <Education/>
             <Projects />
             <Contact />
         </div>
