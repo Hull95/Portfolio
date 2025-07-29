@@ -4,13 +4,6 @@ import ProjectCard from "@/components/ProjectCard";
 import { ChevronDoubleDownIcon, ChevronDoubleUpIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 
-interface Item {
-    images?: string[];
-    title: string;
-    description: string;
-    tags?: string[];
-}
-
 export default function Projects() {
     const [showAll, setShowAll] = useState(false);
     const visibleProjects = showAll ? CardsInfo : CardsInfo.slice(0, 3);
