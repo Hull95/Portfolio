@@ -25,3 +25,25 @@ body .button-resume {
     width: 32px;
     display: unset;
 }
+
+.ant-carousel .slick-next,
+.ant-carousel .slick-prev {
+    color: var(--main-color-blue-darker)!important;
+    opacity: 0.6;
+}
+
+.slick-dots li button {
+    background: var(--main-color-green-darker)!important;
+    opacity: 0.5!important;
+}
+
+.ant-carousel .slick-dots li::after{
+    background-color: var(--main-color-blue-darker)!important;
+    background: var(--main-color-blue-darker)!important;
+}
+
+.ant-carousel .slick-next::after,
+.ant-carousel .slick-prev::after{
+    border-inline-start-width: 3px!important;
+    border-block-start-width: 3px!important;
+}
