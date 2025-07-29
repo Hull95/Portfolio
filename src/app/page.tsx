@@ -2,7 +2,6 @@
 import About from "@/pages/About"
 import Projects from "@/pages/Projects"
 import Contact from "@/pages/Contact"
-import Skills from "@/pages/Skills";
 import ExperienceSection from "@/components/ExperienceSection";
 import TechnologySection from "@/components/TechnologySection";
 
@@ -13,7 +12,6 @@ export default function Home() {
                 <About />
             </div>
             <TechnologySection />
-            <Skills />
             <ExperienceSection />
             <Projects />
             <Contact />

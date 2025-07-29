@@ -261,9 +261,9 @@ const technologies = [
 
 export default function TechnologySection() {
   return (
-    <section id="technology" className="w-full py-8 flex flex-col items-center">
+    <section id="technology" className="w-full py-10 flex flex-col items-center">
       <h2 className="text-2xl pt-4 mb-3 text-main-green">Technologies I Use</h2>
-      <p className="mb-6 text-gray-300 text-center max-w-2xl">These are the technologies I use or have used over the years. You can find more details in my CV.</p>
+      <p className="mb-6 text-gray-400 text-center max-w-2xl">These are the technologies I use or have used over the years. You can find more details in my CV.</p>
       <div className="flex flex-wrap gap-4 justify-center">
         {technologies.map((tech) => (
           <a
