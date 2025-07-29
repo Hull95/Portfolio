@@ -47,3 +47,13 @@ body .button-resume {
     border-inline-start-width: 3px!important;
     border-block-start-width: 3px!important;
 }
+
+.project-button-preview {
+    transition: background-color 0.3s ease;
+    border-radius: 9999px; /* full circle */
+    padding: 0.5rem; /* adjust for spacing */
+  }
+  
+  .project-button-preview:hover {
+    background-color:#f6f3f4; /* Tailwind's gray-200 equivalent */
+  }

@@ -34,7 +34,7 @@ export default function ProjectCard({ item }: ProjectCardProps) {
             <div className="flex-1 flex flex-col">
                 <div className="font-bold text-xl text-blue-color-light mb-1">{item.title}</div>
                 <p className="text-gray-700 text-base flex-1 mb-2">{item.description}</p>
-                <div className="flex flex-wrap gap-2 mt-2">
+                <div className="flex flex-wrap gap-2 mt-2 justify-center">
                     {item.tags?.map((tag, tagIndex) => (
                         <span
                             key={tagIndex}
