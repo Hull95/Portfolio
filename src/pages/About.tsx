@@ -12,7 +12,7 @@ export default function About() {
             id="about"
             className="min-h-[500px] py-6 section-about w-full mx-0 px-4 md:px-10 scroll-mt-20 md:scroll-mt-32 flex items-center pb-0">
             <div className="flex flex-col md:flex-row w-full gap-10 md:gap-0 items-center justify-between">
-                <div className="w-full md:w-[58%] flex flex-col justify-center pl-0 md:pl-[70px]">
+                <div className="w-full md:w-[58%] flex flex-col justify-center pl-0 md:pl-[70px] pb-2">
                     <div className="flex gap-4 items-center">
                         <h1 className="text-lg md:text-2xl lg:text-3xl text-white-color-light">
                             {`Hello, I'm`}<span> Stefan</span>

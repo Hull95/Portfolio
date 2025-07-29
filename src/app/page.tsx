@@ -1,9 +1,11 @@
+"use client";
 import About from "@/pages/About"
 import Projects from "@/pages/Projects"
 import Contact from "@/pages/Contact"
 import Skills from "@/pages/Skills";
-import Experience from "@/pages/Experience";
+import ExperienceSection from "@/components/ExperienceSection";
 import Education from "@/pages/Education";
+import TechnologySection from "@/components/TechnologySection";
 
 export default function Home() {
     return (
@@ -11,8 +13,9 @@ export default function Home() {
             <div className="w-full section-background">
                 <About />
             </div>
+            <TechnologySection />
             <Skills />
-            <Experience />
+            <ExperienceSection />
             <Education/>
             <Projects />
             <Contact />
