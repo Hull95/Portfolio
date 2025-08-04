@@ -11,7 +11,7 @@ export default function TechnologySection() {
     return (
         <section
             id="technology"
-            className="w-full py-10 px-4 sm:px-8 md:px-[10%] flex flex-col items-center scroll-mt-60 sm:scroll-mt-0"
+            className="scroll-mt-10 w-full py-10 px-4 sm:px-8 md:px-[10%] flex flex-col items-center sm:scroll-mt-0"
         >
             <h2 className="text-2xl pt-4 mb-3 text-main-green">
                 {displayed}

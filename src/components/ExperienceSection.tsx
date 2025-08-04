@@ -10,7 +10,7 @@ export default function ExperienceSection() {
     const displayed = useTypewriter(title, 60);
     return (
         <section id="experience"
-                 className="w-full py-10 px-4 md:px-8 flex flex-col items-center bg-white scroll-mt-60 sm:scroll-mt-0">
+                 className="w-full py-10 px-4 md:px-8 flex flex-col items-center bg-white scroll-mt-10 sm:scroll-mt-0">
             <h2 className="text-2xl pt-4 mb-8 text-main-green">{displayed}</h2>
             <div className="w-full max-w-4xl flex flex-col gap-8">
                 {experiencesInfo.map((exp, idx) => (
