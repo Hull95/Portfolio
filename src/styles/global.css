@@ -49,6 +49,7 @@ p {
 
 .text-main-green {
     color: var(--main-color-green);
+    font-weight: 600;
 }
 
 .text-blue-color-light {
@@ -81,4 +82,9 @@ p {
 section h2 {
     color: var(--main-color-green);
     padding-top: 15px;
+}
+
+.tech-image-size {
+    width: 70px;
+    height: 30px;
 }
