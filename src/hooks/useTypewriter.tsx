@@ -1,24 +1,16 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 
-export function useTypewriter(
-    text: string,
-    speed: number,
-    options?: { enabled?: boolean }
-) {
-    const [displayed, setDisplayed] = useState("");
+export function useTypewriter(text:string, speed = 60){
+    const [displayed, setDisplayedText] = useState<string>("")
+
     useEffect(() => {
-        if (options?.enabled === false) {
-            setDisplayed("");
-            return;
+        if(displayed.length < text.length){
+            const timeout = setTimeout(() => {
+                setDisplayedText(text.slice(0, displayed.length + 1));
+            }, speed); // Adjust speed here
+            return () => clearTimeout(timeout);
         }
-        let i = 0;
-        setDisplayed("");
-        const interval = setInterval(() => {
-            setDisplayed((prev) => prev + text[i]);
-            i++;
-            if (i >= text.length) clearInterval(interval);
-        }, speed);
-        return () => clearInterval(interval);
-    }, [text, speed, options?.enabled]);
+    }, [displayed.length, speed, text]);
+
     return displayed;
 }

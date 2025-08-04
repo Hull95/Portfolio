@@ -1,19 +1,16 @@
 "use client";
-import React, {useRef} from "react";
+import React from "react";
 import {experiencesInfo} from "@/app/constants/experienceInfo";
 import {useTypewriter} from "@/hooks/useTypewriter";
-import {useInView} from "@/hooks/useInView";
 
 const title = "Experience";
 
 export default function ExperienceSection() {
-    const sectionRef = useRef<HTMLElement>(null);
-    const inView = useInView(sectionRef, { threshold: 0.3 });
-    const displayed = useTypewriter(title, 60, { enabled: inView });
 
+    const displayed = useTypewriter(title, 60);
     return (
-        <section ref={sectionRef} id="experience"
-                 className="w-full py-10 px-4 md:px-0 flex flex-col items-center bg-white scroll-mt-60 sm:scroll-mt-0">
+        <section id="experience"
+                 className="w-full py-10 px-4 md:px-8 flex flex-col items-center bg-white scroll-mt-60 sm:scroll-mt-0">
             <h2 className="text-2xl pt-4 mb-8 text-main-green">{displayed}</h2>
             <div className="w-full max-w-4xl flex flex-col gap-8">
                 {experiencesInfo.map((exp, idx) => (
