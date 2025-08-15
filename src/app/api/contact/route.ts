@@ -39,7 +39,6 @@ export async function POST(request: NextRequest) {
     }
 
     if (!process.env.RESEND_API_KEY) {
-      console.error('RESEND_API_KEY is not set');
       return NextResponse.json(
         { error: 'Email service not configured' },
         { status: 500 }
@@ -47,7 +46,6 @@ export async function POST(request: NextRequest) {
     }
 
     if (!process.env.CONTACT_EMAIL) {
-      console.error('CONTACT_EMAIL is not set');
       return NextResponse.json(
         { error: 'Contact email not configured' },
         { status: 500 }
@@ -69,7 +67,6 @@ export async function POST(request: NextRequest) {
     });
 
     if (error) {
-      console.error('Resend error:', error);
       return NextResponse.json(
         { error: `Failed to send email: ${error.message}` },
         { status: 500 }
@@ -81,7 +78,6 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
-    console.error('Server error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
