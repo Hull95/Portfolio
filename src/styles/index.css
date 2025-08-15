@@ -50,10 +50,10 @@ body .button-interactive {
 
 .project-button-preview {
     transition: background-color 0.3s ease;
-    border-radius: 9999px; /* full circle */
-    padding: 0.5rem; /* adjust for spacing */
+    border-radius: 9999px; 
+    padding: 0.5rem; 
   }
   
   .project-button-preview:hover {
-    background-color:#f6f3f4; /* Tailwind's gray-200 equivalent */
+    background-color:#f6f3f4; 
   }

@@ -21,7 +21,7 @@ export default function ContactForm() {
     setNotification({ type, message, isVisible: true });
     setTimeout(() => {
       setNotification(prev => ({ ...prev, isVisible: false }));
-    }, 3000);
+    }, 30000000);
   };
 
   const onSubmit = async (data: ContactFormData) => {
@@ -103,7 +103,7 @@ export default function ContactForm() {
               {errors.phone && <p className="text-sm text-red-600 text-start">{errors.phone.message}</p>}
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2 text-start text-blue-color-light">Description</label>
+              <label className="block text-sm font-medium mb-2 text-start text-blue-color-light">Description *</label>
               <textarea
                   {...register("description")}
                   rows={4}
