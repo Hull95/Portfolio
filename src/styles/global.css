@@ -8,6 +8,7 @@
     --main-color-green-hover: #7CF6B5;
     --main-color-green-darker: #17A559;
     --main-color-white: #ffffff;
+    --main-color-red: #ff0000;
 }
 
 h1 {
@@ -43,6 +44,10 @@ p {
     background-color: var(--main-color-blue);
 }
 
+.color-hover-text {
+    color: var(--main-color-blue-hover);
+}
+
 .bcg-main-green {
     background-color: var(--main-color-green);
 }
@@ -54,6 +59,10 @@ p {
 
 .text-blue-color-light {
     color: var(--main-color-blue);
+}
+
+.text-color-red {
+    color: var(--main-color-red);
 }
 
 .border-main-green {

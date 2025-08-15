@@ -6,12 +6,12 @@ body .section-about p {
     font-size: 30px;
 }
 
-body .button-resume:hover {
-    background-color: var(--main-color-green-hover);
+body .button-interactive:hover {
+    background-color: var(--main-color-green-darker);
     color:var(--main-color-white)
 }
 
-body .button-resume {
+body .button-interactive {
     cursor: pointer;
     padding: 10px 25px;
     text-transform: uppercase;
@@ -50,10 +50,10 @@ body .button-resume {
 
 .project-button-preview {
     transition: background-color 0.3s ease;
-    border-radius: 9999px; /* full circle */
-    padding: 0.5rem; /* adjust for spacing */
+    border-radius: 9999px; 
+    padding: 0.5rem; 
   }
   
   .project-button-preview:hover {
-    background-color:#f6f3f4; /* Tailwind's gray-200 equivalent */
+    background-color:#f6f3f4; 
   }

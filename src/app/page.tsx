@@ -1,7 +1,7 @@
 "use client";
 import About from "@/pages/About"
 import Projects from "@/pages/Projects"
-import Contact from "@/pages/Contact"
+import Contact from "./contact/page"
 import ExperienceSection from "@/components/ExperienceSection";
 import TechnologySection from "@/components/TechnologySection";
 
