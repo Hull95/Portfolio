@@ -41,13 +41,28 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log(process.env.CONTACT_EMAIL);
-    console.log(process.env.RESEND_API_KEY);
+    // Check if API key is set
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not set');
+      return NextResponse.json(
+        { error: 'Email service not configured' },
+        { status: 500 }
+      );
+    }
+
+    // Check if contact email is set
+    if (!process.env.CONTACT_EMAIL) {
+      console.error('CONTACT_EMAIL is not set');
+      return NextResponse.json(
+        { error: 'Contact email not configured' },
+        { status: 500 }
+      );
+    }
     
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>', // You can change this to your verified domain
-      to: [process.env.CONTACT_EMAIL || 'stefan.vranjes995@outlook.com'], // Your email where you want to receive messages
+      to: [process.env.CONTACT_EMAIL], // Use environment variable
       subject: `New Contact Form Submission from ${name} ${surname}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -62,7 +77,7 @@ export async function POST(request: NextRequest) {
     if (error) {
       console.error('Resend error:', error);
       return NextResponse.json(
-        { error: 'Failed to send email' },
+        { error: `Failed to send email: ${error.message}` },
         { status: 500 }
       );
     }
