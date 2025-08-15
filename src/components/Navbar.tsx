@@ -24,7 +24,6 @@ export default function Navbar() {
     const [activeSection, setActiveSection] = useState("About");
     const [isOpen, setIsOpen] = useState(false);
 
-    // Disable scroll on mobile menu open
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
