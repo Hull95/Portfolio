@@ -43,6 +43,10 @@ p {
     background-color: var(--main-color-blue);
 }
 
+.color-hover-text {
+    color: var(--main-color-blue-hover);
+}
+
 .bcg-main-green {
     background-color: var(--main-color-green);
 }

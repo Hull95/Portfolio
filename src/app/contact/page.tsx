@@ -12,11 +12,11 @@ export default function Contact() {
                 
                 <ContactForm />
                 
-                <div className="mt-12 pt-8 border-t border-gray-200">
-                    <p className="text-gray-600">
+                <div className="mt-12">
+                    <p className="text-blue-color-light">
                         You can also reach me directly at{" "}
                         <a 
-                            className="text-blue-600 hover:text-blue-800 underline font-medium" 
+                            className="text-blue-color-light hover:text-blue-800 underline font-medium"
                             href="mailto:stefan.vranjes995@outlook.com"
                         >
                             stefan.vranjes995@outlook.com

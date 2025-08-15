@@ -6,12 +6,12 @@ body .section-about p {
     font-size: 30px;
 }
 
-body .button-resume:hover {
-    background-color: var(--main-color-green-hover);
+body .button-interactive:hover {
+    background-color: var(--main-color-green-darker);
     color:var(--main-color-white)
 }
 
-body .button-resume {
+body .button-interactive {
     cursor: pointer;
     padding: 10px 25px;
     text-transform: uppercase;

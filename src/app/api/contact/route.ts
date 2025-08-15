@@ -7,7 +7,6 @@ export async function POST(request: NextRequest) {
   try {
     const { name, surname, email, phone, description } = await request.json();
 
-    // Basic validation
     if (!name || !surname || !email || !phone || !description) {
       return NextResponse.json(
         { error: 'All fields are required' },
@@ -15,7 +14,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
@@ -24,7 +22,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Phone validation (format: +38324234324)
     const phoneRegex = /^\+\d{10,15}$/;
     if (!phoneRegex.test(phone)) {
       return NextResponse.json(
@@ -41,7 +38,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check if API key is set
     if (!process.env.RESEND_API_KEY) {
       console.error('RESEND_API_KEY is not set');
       return NextResponse.json(
@@ -50,7 +46,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check if contact email is set
     if (!process.env.CONTACT_EMAIL) {
       console.error('CONTACT_EMAIL is not set');
       return NextResponse.json(
@@ -58,12 +53,11 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       );
     }
-    
-    // Send email using Resend
+
     const { data, error } = await resend.emails.send({
-      from: 'Contact Form <onboarding@resend.dev>', // You can change this to your verified domain
-      to: [process.env.CONTACT_EMAIL], // Use environment variable
-      subject: `New Contact Form Submission from ${name} ${surname}`,
+      from: 'Contact Form <onboarding@resend.dev>',
+      to: [process.env.CONTACT_EMAIL],
+      subject:  `📩 New Contact from ${name} ${surname}`,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name} ${surname}</p>
