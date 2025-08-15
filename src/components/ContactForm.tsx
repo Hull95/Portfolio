@@ -108,7 +108,6 @@ export default function ContactForm() {
                   {...register("description")}
                   rows={4}
                   maxLength={250}
-                  placeholder="Tell us about your project (max 250 characters)"
                   className={`w-full px-4 py-3 border rounded-lg resize-none ${
                       errors.description ? "border-red-500" : "border-gray-300"
                   }`}
