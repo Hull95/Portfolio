@@ -21,7 +21,7 @@ export default function ContactForm() {
     setNotification({ type, message, isVisible: true });
     setTimeout(() => {
       setNotification(prev => ({ ...prev, isVisible: false }));
-    }, 30000000);
+    }, 3000);
   };
 
   const onSubmit = async (data: ContactFormData) => {
