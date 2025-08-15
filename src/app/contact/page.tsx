@@ -1,4 +1,4 @@
-import ContactForm from '../components/ContactForm';
+import ContactForm from '../../components/ContactForm';
 
 export default function Contact() {
     return (
@@ -17,7 +17,7 @@ export default function Contact() {
                         You can also reach me directly at{" "}
                         <a 
                             className="text-blue-600 hover:text-blue-800 underline font-medium" 
-                            href="mailto:your-email@example.com"
+                            href="mailto:stefan.vranjes995@outlook.com"
                         >
                             stefan.vranjes995@outlook.com
                         </a>
@@ -26,4 +26,4 @@ export default function Contact() {
             </div>
         </section>
     )
-}
+} 
