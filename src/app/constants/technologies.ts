@@ -9,16 +9,16 @@ export const technologies = [
         url: "https://www.typescriptlang.org/",
         img: "/images/typescript.png",
     },
-    {
-        name: "HTML",
-        url: "https://www.w3.org/TR/html52/",
-        img: "/images/html.png",
-    },
-    {
-        name: "Css",
-        url: "https://www.w3.org/Style/CSS/",
-        img: "/images/css.png",
-    },
+    // {
+    //     name: "HTML",
+    //     url: "https://www.w3.org/TR/html52/",
+    //     img: "/images/html.png",
+    // },
+    // {
+    //     name: "Css",
+    //     url: "https://www.w3.org/Style/CSS/",
+    //     img: "/images/css.png",
+    // },
     {
         name: "React",
         url: "https://react.dev/",
@@ -86,21 +86,21 @@ export const technologies = [
         url: "https://www.atlassian.com/software/jira",
         img: "/images/jira.png",
     },
-    {
-        name: "Jest",
-        url: "https://jestjs.io/",
-        img: "/images/jest.png",
-    },
+    // {
+    //     name: "Jest",
+    //     url: "https://jestjs.io/",
+    //     img: "/images/jest.png",
+    // },
     {
         name: "Mapbox",
         url: "https://www.mapbox.com/",
         img: "/images/mapbox.png",
     },
-    {
-        name: "MacOs",
-        url: "https://www.apple.com/macos/",
-        img: "/images/macos.png",
-    },
+    // {
+    //     name: "MacOs",
+    //     url: "https://www.apple.com/macos/",
+    //     img: "/images/macos.png",
+    // },
     {
         name: "Figma",
         url: "https://www.figma.com/",
