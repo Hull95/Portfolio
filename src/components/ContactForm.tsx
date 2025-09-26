@@ -124,7 +124,7 @@ export default function ContactForm() {
                 className={`w-full py-3 px-6 rounded-lg font-medium button-interactive bcg-main-green text-white ${
                     isSubmitting
                         ? "bg-gray-400 cursor-not-allowed"
-                        : "button-interactive"
+                        : "button-interactive cursor-pointer"
                 }`}
             >
               {isSubmitting ? "Sending..." : "Send Message"}

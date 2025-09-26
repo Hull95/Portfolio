@@ -58,7 +58,7 @@ export default function Navbar() {
                         <div className="mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
                             <div className="relative flex h-16 items-center justify-between">
                                 <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
-                                    <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                                    <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white cursor-pointer">
                                         <Bars3Icon
                                             className="block h-6 w-6 group-data-open:hidden"
                                             aria-hidden="true"
@@ -80,7 +80,7 @@ export default function Navbar() {
                                                         activeSection === item.name
                                                             ? "text-main-green bcg-main-blue"
                                                             : "text-gray-300 hover:text-white",
-                                                        "rounded-md px-3 py-2 font-medium text-base capitalize button-hover-navbar"
+                                                        "rounded-md px-3 py-2 font-medium text-base capitalize button-hover-navbar cursor-pointer"
                                                     )}
                                                 >
                                                     {item.label}
@@ -97,7 +97,7 @@ export default function Navbar() {
                             <div className="flex flex-col h-full">
                                 {/* Close button positioned at top right */}
                                 <div className="flex justify-end p-4">
-                                    <DisclosureButton className="rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                                    <DisclosureButton className="rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white cursor-pointer">
                                         <XMarkIcon className="h-8 w-8" aria-hidden="true" />
                                     </DisclosureButton>
                                 </div>
@@ -113,7 +113,7 @@ export default function Navbar() {
                                                 activeSection === item.name
                                                     ? "text-main-green"
                                                     : "text-gray-300 hover:text-white",
-                                                "text-3xl font-semibold transition-colors duration-200"
+                                                "text-3xl font-semibold transition-colors duration-200 cursor-pointer"
                                             )}
                                         >
                                             {item.label}

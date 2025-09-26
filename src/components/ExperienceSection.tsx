@@ -49,7 +49,7 @@ export default function ExperienceSection() {
                 {experiencesInfo.map((exp, idx) => (
                     <div
                         key={idx}
-                        ref={el => itemRefs.current[idx] = el}
+                        ref={el => { itemRefs.current[idx] = el; }}
                         className={`relative flex mb-16 ${
                             idx % 2 === 0 ? 'flex-col md:flex-row md:items-center' : 'flex-col md:flex-row-reverse md:items-center'
                         }`}
