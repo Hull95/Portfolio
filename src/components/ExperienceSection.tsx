@@ -43,22 +43,22 @@ export default function ExperienceSection() {
             
             <div className="relative w-full max-w-7xl">
                 {/* Timeline Line */}
-                <div className="absolute left-4 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-main-blue"></div>
+                <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-main-blue"></div>
                 
-                
+
                 {experiencesInfo.map((exp, idx) => (
                     <div
                         key={idx}
                         ref={el => itemRefs.current[idx] = el}
-                        className={`relative flex items-center mb-16 ${
-                            idx % 2 === 0 ? 'flex-col md:flex-row' : 'flex-col md:flex-row-reverse'
+                        className={`relative flex mb-16 ${
+                            idx % 2 === 0 ? 'flex-col md:flex-row md:items-center' : 'flex-col md:flex-row-reverse md:items-center'
                         }`}
                     >
                         {/* Timeline Dot for each card */}
-                        <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-3 h-3 bcg-main-green rounded-full z-10"></div>
+                        <div className="absolute left-6 md:left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bcg-main-green rounded-full z-10"></div>
                         
                         {/* Content Card */}
-                        <div className={`w-full md:w-6/12 pl-12 md:pl-0 ${idx % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
+                        <div className={`w-full md:w-6/12 pl-16 md:pl-0 ${idx % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
                             <div className={`bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-500 ${
                                 visibleItems[idx] 
                                     ? 'opacity-100 translate-y-0' 
