@@ -17,7 +17,7 @@ export default function TechnologySection() {
                 {displayed}
             </h2>
             <p className="mb-6 text-gray-400 text-center max-w-2xl">
-                These are the technologies I use or have used over the years. You can find more details in my CV.
+                I&apos;ve been working with a range of technologies in the web development world.
             </p>
 
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 w-full max-w-6xl">

@@ -8,6 +8,7 @@ interface NotificationProps {
 }
 
 export default function Notification({ type, message, isVisible }: NotificationProps) {
+    
     if (!isVisible) return null;
 
     const icon = type === "success" ? (

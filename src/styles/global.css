@@ -1,5 +1,12 @@
 @import 'tailwindcss';
 @tailwind utilities;
+
+/* Custom breakpoint for extra small screens */
+@media (min-width: 475px) {
+  .xs\:block {
+    display: block;
+  }
+}
 :root {
     --main-color-blue: #05314b;
     --main-color-blue-hover: #448DB7;
@@ -55,6 +62,18 @@ p {
 .text-main-green {
     color: var(--main-color-green);
     font-weight: 600;
+}
+
+.text-main-green-hover {
+    color: var(--main-color-green-hover);
+}
+
+.bg-main-blue {
+    background-color: var(--main-color-blue);
+}
+
+.bg-main-blue-darker {
+    background-color: var(--main-color-blue-darker);
 }
 
 .text-blue-color-light {

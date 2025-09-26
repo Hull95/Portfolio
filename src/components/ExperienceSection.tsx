@@ -6,7 +6,6 @@ import {useTypewriter} from "@/hooks/useTypewriter";
 const title = "Experience";
 
 export default function ExperienceSection() {
-
     const displayed = useTypewriter(title, 60);
     return (
         <section id="experience"

@@ -4,6 +4,7 @@ import { RocketLaunchIcon } from "@heroicons/react/24/outline";
 import profileImage from "../../public/images/heroArea.png";
 
 export default function About() {
+    
     const handlePreviewCV = () => {
         window.open("/StefanVranjesCV.pdf", "_blank");
     };
@@ -16,7 +17,7 @@ export default function About() {
                 <div className="w-full md:w-[58%] flex flex-col justify-center pl-0 md:pl-[70px] pb-2">
                     <div className="flex gap-4 items-center">
                         <h1 className="text-lg md:text-2xl lg:text-3xl text-white-color-light">
-                            {`Hello, I'm`}<span> Stefan</span>
+                            Hello, I&apos;m<span> Stefan</span>
                         </h1>
                     </div>
                     <div className="flex flex-wrap items-center gap-2 mt-2">
