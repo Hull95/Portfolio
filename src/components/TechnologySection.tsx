@@ -11,16 +11,17 @@ export default function TechnologySection() {
     return (
         <section
             id="technology"
-            className="scroll-mt-10 w-full py-10 px-4 sm:px-8 md:px-[10%] flex flex-col items-center sm:scroll-mt-0"
+            className="scroll-mt-10 w-full py-16 px-4 md:px-8 flex flex-col items-center sm:scroll-mt-0"
         >
-            <h2 className="text-2xl pt-4 mb-3 text-main-green">
-                {displayed}
-            </h2>
-            <p className="mb-6 text-gray-400 text-center max-w-2xl">
-                I&apos;ve been working with a range of technologies in the web development world.
-            </p>
+            <div className="w-full max-w-7xl">
+                <h2 className="text-2xl pt-4 mb-8 text-main-green text-center">
+                    {displayed}
+                </h2>
+                <p className="mb-12 text-gray-400 text-center max-w-2xl mx-auto">
+                    I&apos;ve been working with a range of technologies in the web development world.
+                </p>
 
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 w-full max-w-6xl">
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 w-full">
                 {technologies.map((tech) => (
                     <a
                         key={tech.name}
@@ -42,6 +43,7 @@ export default function TechnologySection() {
                         </div>
                     </a>
                 ))}
+                </div>
             </div>
         </section>
     );
