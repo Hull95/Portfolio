@@ -9,11 +9,11 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-    { name: "About", href: "#about" },
-    { name: "Technology", href: "#technology" },
-    { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "about", label: "About", href: "#about" },
+    { name: "technology", label: "Technology", href: "#technology" },
+    { name: "experience", label: "Experience", href: "#experience" },
+    { name: "projects", label: "Projects", href: "#projects" },
+    { name: "contact", label: "Contact", href: "#contact" },
 ];
 
 function classNames(...classes: string[]) {
@@ -21,7 +21,7 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
-    const [activeSection, setActiveSection] = useState("About");
+    const [activeSection, setActiveSection] = useState("about");
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
@@ -83,7 +83,7 @@ export default function Navbar() {
                                                         "rounded-md px-3 py-2 font-medium text-base capitalize button-hover-navbar"
                                                     )}
                                                 >
-                                                    {item.name}
+                                                    {item.label}
                                                 </button>
                                             ))}
                                         </div>
@@ -116,7 +116,7 @@ export default function Navbar() {
                                                 "text-3xl font-semibold transition-colors duration-200"
                                             )}
                                         >
-                                            {item.name}
+                                            {item.label}
                                         </DisclosureButton>
                                     ))}
                                 </div>

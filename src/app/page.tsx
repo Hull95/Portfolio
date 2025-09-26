@@ -1,7 +1,7 @@
 "use client";
 import About from "@/pages/About"
 import Projects from "@/pages/Projects"
-import Contact from "./contact/page"
+import ContactPage from "../pages/ContactPage"
 import ExperienceSection from "@/components/ExperienceSection";
 import TechnologySection from "@/components/TechnologySection";
 
@@ -14,7 +14,7 @@ export default function Home() {
             <TechnologySection />
             <ExperienceSection />
             <Projects />
-            <Contact />
+            <ContactPage />
         </div>
     )
 }

@@ -16,8 +16,8 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         <html lang="en">
         <head><title>Stefan Vranjes - Portfolio</title></head>
         <body>
-        <Navbar/>
-        <main className="mx-auto">{children}</main>
+            <Navbar/>
+            <main className="mx-auto">{children}</main>
         </body>
         </html>
     )

@@ -1,5 +1,12 @@
 @import 'tailwindcss';
 @tailwind utilities;
+
+/* Custom breakpoint for extra small screens */
+@media (min-width: 475px) {
+  .xs\:block {
+    display: block;
+  }
+}
 :root {
     --main-color-blue: #05314b;
     --main-color-blue-hover: #448DB7;
@@ -57,6 +64,18 @@ p {
     font-weight: 600;
 }
 
+.text-main-green-hover {
+    color: var(--main-color-green-hover);
+}
+
+.bg-main-blue {
+    background-color: var(--main-color-blue);
+}
+
+.bg-main-blue-darker {
+    background-color: var(--main-color-blue-darker);
+}
+
 .text-blue-color-light {
     color: var(--main-color-blue);
 }
@@ -96,4 +115,116 @@ section h2 {
 .tech-image-size {
     width: 70px;
     height: 30px;
+}
+
+/* Title Animation */
+@keyframes titleSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes titleFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes nameGlow {
+    0% {
+        text-shadow: 0 0 5px var(--main-color-green);
+    }
+    50% {
+        text-shadow: 0 0 20px var(--main-color-green), 0 0 30px var(--main-color-green);
+    }
+    100% {
+        text-shadow: 0 0 5px var(--main-color-green);
+    }
+}
+
+.title-animate {
+    animation: titleSlideIn 0.8s ease-out forwards;
+    animation-fill-mode: both;
+}
+
+.subtitle-animate {
+    animation: titleFadeIn 0.8s ease-out 0.2s forwards;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+.description-animate {
+    animation: titleFadeIn 0.8s ease-out 0.4s forwards;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+.name-glow {
+    animation: nameGlow 2s ease-in-out infinite;
+}
+
+.button-animate {
+    animation: titleFadeIn 0.8s ease-out 0.6s forwards;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+/* Reset animation classes */
+.animation-reset {
+    animation: none !important;
+    opacity: 0;
+    transform: none;
+}
+
+/* Timeline Responsive Styles */
+@media (max-width: 768px) {
+    .timeline-mobile {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    
+    .timeline-card-mobile {
+        width: 100% !important;
+        padding-left: 3rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .timeline-dot-mobile {
+        left: 1rem !important;
+        transform: translateX(-50%) !important;
+    }
+    
+    .timeline-line-mobile {
+        left: 1rem !important;
+        transform: translateX(-50%) !important;
+    }
+}
+
+/* Timeline Enhancement */
+.timeline-container {
+    position: relative;
+}
+
+.timeline-line-enhanced {
+    background: linear-gradient(to bottom, #e5e7eb, #9ca3af, #e5e7eb);
+    box-shadow: 0 0 10px rgba(156, 163, 175, 0.3);
+}
+
+.timeline-decorative-dot {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.timeline-decorative-dot:hover {
+    transform: scale(1.2);
 }

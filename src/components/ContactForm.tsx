@@ -58,7 +58,7 @@ export default function ContactForm() {
                 <input
                     {...register("name")}
                     type="text"
-                    placeholder="Enter your name"
+                    placeholder="Your name"
                     className={`w-full px-4 py-3 border rounded-lg ${
                         errors.name ? "border-red-500" : "border-gray-300"
                     }`}
@@ -70,7 +70,7 @@ export default function ContactForm() {
                 <input
                     {...register("surname")}
                     type="text"
-                    placeholder="Enter your surname"
+                    placeholder="Your surname"
                     className={`w-full px-4 py-3 border rounded-lg ${
                         errors.surname ? "border-red-500" : "border-gray-300"
                     }`}
@@ -83,7 +83,7 @@ export default function ContactForm() {
               <input
                   {...register("email")}
                   type="email"
-                  placeholder="example@email.com"
+                  placeholder="Your email"
                   className={`w-full px-4 py-3 border rounded-lg ${
                       errors.email ? "border-red-500" : "border-gray-300"
                   }`}
@@ -108,7 +108,7 @@ export default function ContactForm() {
                   {...register("description")}
                   rows={4}
                   maxLength={250}
-                  placeholder="Tell us about your project (max 250 characters)"
+                  placeholder="Your message"
                   className={`w-full px-4 py-3 border rounded-lg resize-none ${
                       errors.description ? "border-red-500" : "border-gray-300"
                   }`}

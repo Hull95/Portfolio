@@ -11,18 +11,6 @@ export default function Contact() {
                 </p>
                 
                 <ContactForm />
-                
-                <div className="mt-12 pt-8 border-t border-gray-200">
-                    <p className="text-gray-600">
-                        You can also reach me directly at{" "}
-                        <a 
-                            className="text-blue-600 hover:color-hover-text  underline font-medium"
-                            href="mailto:your-email@example.com"
-                        >
-                            stefan.vranjes995@outlook.com
-                        </a>
-                    </p>
-                </div>
             </div>
         </section>
     )
