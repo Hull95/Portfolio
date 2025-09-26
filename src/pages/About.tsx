@@ -93,7 +93,7 @@ export default function About() {
                     <div className={`flex gap-2 items-center pt-4 ${isVisible ? 'button-animate' : 'opacity-0'}`}>
                         <button
                             type="button"
-                            className="rounded-lg border border-transparent bcg-main-green text-white-color-light button-interactive px-4 py-2"
+                            className="rounded-lg border border-transparent bcg-main-green text-white-color-light button-interactive px-4 py-2 cursor-pointer"
                             onClick={handlePreviewCV}
                         >
                             See my Resume
