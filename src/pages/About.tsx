@@ -104,9 +104,10 @@ export default function About() {
                 <div className="w-full md:w-[40%] flex justify-center items-center mt-6 md:mt-0">
                     <Image
                         src={profileImage}
-                        alt="Profile"
+                        alt="Stefan Vranjes - Senior Frontend Developer and Team Leader"
                         width={300}
                         height={300}
+                        priority
                         className="w-full max-w-[90%] sm:max-w-[60%] md:max-w-[95%] lg:max-w-[80%] xl:max-w-[70%] 2xl:max-w-[70%] h-auto object-contain" />
                 </div>
             </div>

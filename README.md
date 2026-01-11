@@ -49,6 +49,75 @@ The form includes validation for:
 - Phone number format (+38324234324)
 - Description character limit (250 characters)
 
+## SEO Optimization
+
+This portfolio is fully optimized for search engines (Google, Bing, etc.) with the following features:
+
+### ✅ Implemented SEO Features
+
+1. **Meta Tags & Open Graph**
+   - Complete metadata with title, description, and keywords
+   - Open Graph tags for social media sharing (Facebook, LinkedIn)
+   - Twitter Card tags for Twitter sharing
+   - Canonical URLs to prevent duplicate content
+
+2. **Structured Data (JSON-LD)**
+   - Person schema for better Google Knowledge Graph
+   - Portfolio/CreativeWork schema
+   - Website schema with search functionality
+
+3. **Sitemap & Robots.txt**
+   - Automatic sitemap generation at `/sitemap.xml`
+   - Robots.txt at `/robots.txt` for search engine crawlers
+   - Proper indexing directives
+
+4. **Performance Optimizations**
+   - Image optimization with Next.js Image component
+   - AVIF and WebP format support
+   - Compression enabled
+   - Security headers configured
+
+5. **Accessibility & Best Practices**
+   - Semantic HTML structure
+   - Proper alt text for images
+   - Mobile-responsive design
+   - Fast loading times
+
+### 🚀 Setup for Production
+
+1. **Set Environment Variables:**
+   ```bash
+   # In .env.local
+   NEXT_PUBLIC_SITE_URL=https://stefanwebdev.com
+   RESEND_API_KEY=your_key_here
+   CONTACT_EMAIL=your-email@example.com
+   ```
+
+2. **Verify Your Domain:**
+   - After deploying, verify your domain in Google Search Console
+   - Submit your sitemap: `https://stefanwebdev.com/sitemap.xml`
+   - Add Google verification code to `src/app/layout.tsx` (metadata.verification.google)
+
+3. **Social Media Profiles:**
+   - Update social media links in `src/components/StructuredData.tsx`
+   - Add your actual Twitter handle in `src/app/layout.tsx` (metadata.twitter.creator)
+
+4. **Test Your SEO:**
+   - Use [Google Rich Results Test](https://search.google.com/test/rich-results)
+   - Check [PageSpeed Insights](https://pagespeed.web.dev/)
+   - Validate with [Schema Markup Validator](https://validator.schema.org/)
+
+### 📊 Post-Deployment Checklist
+
+- [ ] Add `NEXT_PUBLIC_SITE_URL` to production environment variables
+- [ ] Verify domain in Google Search Console
+- [ ] Submit sitemap to Google Search Console
+- [ ] Add Google Analytics (optional)
+- [ ] Update social media links in StructuredData.tsx
+- [ ] Test all meta tags with [Meta Tags Checker](https://metatags.io/)
+- [ ] Verify Open Graph tags with [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
+- [ ] Check mobile-friendliness with [Google Mobile-Friendly Test](https://search.google.com/test/mobile-friendly)
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
