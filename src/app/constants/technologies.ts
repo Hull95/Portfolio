@@ -9,16 +9,6 @@ export const technologies = [
         url: "https://www.typescriptlang.org/",
         img: "/images/typescript.png",
     },
-    // {
-    //     name: "HTML",
-    //     url: "https://www.w3.org/TR/html52/",
-    //     img: "/images/html.png",
-    // },
-    // {
-    //     name: "Css",
-    //     url: "https://www.w3.org/Style/CSS/",
-    //     img: "/images/css.png",
-    // },
     {
         name: "React",
         url: "https://react.dev/",
@@ -39,17 +29,6 @@ export const technologies = [
         name: "React Native",
         url: "https://reactnative.dev/",
         img: "/images/reactNative.png",
-    },
-    {
-        name: "Python",
-        url: "https://www.python.org/",
-        img: "/images/python.png",
-    },
-    {
-        name: "Django",
-        url: "https://www.djangoproject.com/",
-        img: "/images/django.png",
-        color: "#092E20",
     },
     {
         name: "Bootstrap 5",
