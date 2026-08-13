@@ -1,14 +1,21 @@
 "use client";
 import React, {useEffect, useRef, useState} from "react";
 import {experiencesInfo} from "@/app/constants/experienceInfo";
-import {useTypewriter} from "@/hooks/useTypewriter";
+import Typewriter from "@/components/Typewriter";
 
 const title = "Experience";
 
 export default function ExperienceSection() {
-    const displayed = useTypewriter(title, 60);
     const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(experiencesInfo.length).fill(false));
+    // Until hydration the cards render fully visible, so the job titles and
+    // descriptions are present in the server HTML rather than hidden behind
+    // an IntersectionObserver that only a JS-capable client will ever run.
+    const [hydrated, setHydrated] = useState(false);
     const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+    useEffect(() => {
+        setHydrated(true);
+    }, []);
 
     useEffect(() => {
         const observers = itemRefs.current.map((ref, index) => {
@@ -39,7 +46,7 @@ export default function ExperienceSection() {
     return (
         <section id="experience"
                  className="w-full py-16 px-4 md:px-8 flex flex-col items-center bg-white scroll-mt-10 sm:scroll-mt-0">
-            <h2 className="text-2xl pt-4 mb-16 text-main-green font-bold">{displayed}</h2>
+            <h2 className="text-2xl pt-4 mb-16 text-main-green font-bold"><Typewriter text={title} /></h2>
 
             <div className="relative w-full max-w-7xl">
                 <div
@@ -62,7 +69,7 @@ export default function ExperienceSection() {
                         <div className={`w-full md:w-6/12 pl-16 md:pl-0 ${idx % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
                             <div
                                 className={`bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-500 ${
-                                    visibleItems[idx]
+                                    !hydrated || visibleItems[idx]
                                         ? 'opacity-100 translate-y-0'
                                         : `opacity-0 ${idx % 2 === 0 ? 'translate-x-8' : '-translate-x-8'} translate-y-4`
                                 }`}>

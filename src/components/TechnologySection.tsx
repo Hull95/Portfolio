@@ -2,12 +2,11 @@
 import React from "react";
 import Image from "next/image";
 import {technologies} from "@/app/constants/technologies";
-import {useTypewriter} from "@/hooks/useTypewriter";
+import Typewriter from "@/components/Typewriter";
 
 const title = "Tech Stack";
 
 export default function TechnologySection() {
-    const displayed = useTypewriter(title, 60);
     const COLS = 5;
     const remainder = technologies.length % COLS;
     const mainItems = remainder === 0 ? technologies : technologies.slice(0, -remainder);
@@ -20,7 +19,7 @@ export default function TechnologySection() {
         >
             <div className="w-full max-w-7xl">
                 <h2 className="text-2xl pt-4 mb-8 text-main-green text-center">
-                    {displayed}
+                    <Typewriter text={title} />
                 </h2>
                 <p className="mb-12 text-gray-400 text-center max-w-2xl mx-auto">
                     I&apos;ve been working with a range of technologies in the web development world.

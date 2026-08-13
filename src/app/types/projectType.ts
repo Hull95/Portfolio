@@ -3,4 +3,5 @@ export type ProjectType = {
     images?: string[];
     description: string;
     tags: string[];
+    link?: string;
 }

@@ -20,17 +20,24 @@ function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(" ");
 }
 
+/**
+ * Locks body scroll while the mobile panel is open. This lives in its own
+ * component because Disclosure exposes `open` through a render prop, and
+ * calling a hook inside that callback would break the Rules of Hooks.
+ */
+function BodyScrollLock({ open }: { open: boolean }) {
+    useEffect(() => {
+        document.body.style.overflow = open ? "hidden" : "";
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [open]);
+
+    return null;
+}
+
 export default function Navbar() {
     const [activeSection, setActiveSection] = useState("about");
-    const [isOpen, setIsOpen] = useState(false);
-
-    useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
-    }, [isOpen]);
 
     const handleClick = (name: string, href: string) => {
         setActiveSection(name);
@@ -38,7 +45,6 @@ export default function Navbar() {
         if (target) {
             target.scrollIntoView({ behavior: "smooth" });
         }
-        setIsOpen(false);
     };
 
     return (
@@ -46,15 +52,9 @@ export default function Navbar() {
             as="nav"
             className="sticky top-0 z-50 navbar"
         >
-            {({ open }) => {
-                // Sync Disclosure open state
-                // eslint-disable-next-line react-hooks/rules-of-hooks
-                useEffect(() => {
-                    setIsOpen(open);
-                }, [open]);
-
-                return (
+            {({ open }) => (
                     <>
+                        <BodyScrollLock open={open} />
                         <div className="mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
                             <div className="relative flex h-16 items-center justify-between">
                                 <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
@@ -123,8 +123,7 @@ export default function Navbar() {
                             </div>
                         </DisclosurePanel>
                     </>
-                );
-            }}
+            )}
         </Disclosure>
     );
 }
