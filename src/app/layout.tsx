@@ -5,6 +5,10 @@ import Navbar from "@/components/Navbar";
 import StructuredData from "@/components/StructuredData";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stefanwebdev.com';
+// Set once you have verified the site in Google Search Console.
+const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+// Set only if you actually have an X/Twitter account.
+const twitterHandle = process.env.NEXT_PUBLIC_TWITTER_HANDLE;
 const siteName = 'Stefan Vranjes - Frontend Developer Portfolio';
 const description = 'Portfolio of Stefan Vranjes, Senior Frontend Developer & Team Leader specializing in React, TypeScript, Next.js, and modern web development. Explore projects, experience, and technical expertise.';
 const keywords = [
@@ -47,21 +51,14 @@ export const metadata: Metadata = {
         siteName: siteName,
         title: siteName,
         description: description,
-        images: [
-            {
-                url: `${siteUrl}/images/stefan_vranjes_profile.jpeg`,
-                width: 1200,
-                height: 630,
-                alt: 'Stefan Vranjes - Frontend Developer',
-            },
-        ],
+        // The share image comes from app/opengraph-image.tsx, which guarantees
+        // the correct 1200x630 aspect ratio for LinkedIn / Facebook / X cards.
     },
     twitter: {
         card: 'summary_large_image',
         title: siteName,
         description: description,
-        images: [`${siteUrl}/images/stefan_vranjes_profile.jpeg`],
-        creator: '@stefanvranjes', // Update with your actual Twitter handle if you have one
+        ...(twitterHandle && { creator: twitterHandle }),
     },
     robots: {
         index: true,
@@ -75,23 +72,24 @@ export const metadata: Metadata = {
         },
     },
     icons: {
-        icon: '/favicon.ico',
-        apple: '/favicon.ico',
+        icon: [
+            { url: '/favicon.ico', sizes: 'any' },
+            { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+            { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+        ],
+        apple: '/apple-touch-icon.png',
     },
     alternates: {
-        canonical: siteUrl,
+        canonical: '/',
     },
-    verification: {
-        // Add your Google Search Console verification code here when you get it
-        // google: 'your-google-verification-code',
-    },
+    ...(googleVerification && { verification: { google: googleVerification } }),
 }
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
         <html lang="en">
         <head>
-            <link rel="canonical" href={siteUrl} />
+            {/* canonical is emitted by metadata.alternates above */}
             <StructuredData />
         </head>
         <body>

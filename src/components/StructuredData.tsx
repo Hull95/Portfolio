@@ -1,18 +1,16 @@
+import { socialProfiles } from "@/app/constants/socials";
+
 export default function StructuredData() {
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stefanwebdev.com';
-    
+
     const personSchema = {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": `${siteUrl}/#person`,
         "name": "Stefan Vranjes",
         "jobTitle": "Senior Frontend Developer & Team Leader",
         "url": siteUrl,
-        "sameAs": [
-            // Add your social media profiles here when available
-            // "https://github.com/stefanvranjes",
-            // "https://linkedin.com/in/stefanvranjes",
-            // "https://twitter.com/stefanvranjes"
-        ],
+        ...(socialProfiles.length > 0 && { "sameAs": socialProfiles }),
         "image": `${siteUrl}/images/stefan_vranjes_profile.jpeg`,
         "address": {
             "@type": "PostalAddress",
@@ -35,35 +33,25 @@ export default function StructuredData() {
         }
     };
 
-    const portfolioSchema = {
-        "@context": "https://schema.org",
-        "@type": "CreativeWork",
-        "name": "Stefan Vranjes Portfolio",
-        "description": "Portfolio showcasing web development projects and technical expertise",
-        "author": {
-            "@type": "Person",
-            "name": "Stefan Vranjes"
-        },
-        "url": siteUrl
-    };
-
     const websiteSchema = {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": siteUrl,
+        "@id": `${siteUrl}/#website`,
+        "name": "Stefan Vranjes - Frontend Developer Portfolio",
         "url": siteUrl,
-        "author": {
-            "@type": "Person",
-            "name": "Stefan Vranjes"
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": `${siteUrl}/?search={search_term_string}`
-            },
-            "query-input": "required name=search_term_string"
-        }
+        "inLanguage": "en",
+        "author": { "@id": `${siteUrl}/#person` },
+        "about": { "@id": `${siteUrl}/#person` }
+    };
+
+    const profilePageSchema = {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": `${siteUrl}/#profilepage`,
+        "url": siteUrl,
+        "name": "Stefan Vranjes - Frontend Developer Portfolio",
+        "isPartOf": { "@id": `${siteUrl}/#website` },
+        "mainEntity": { "@id": `${siteUrl}/#person` }
     };
 
     return (
@@ -74,13 +62,12 @@ export default function StructuredData() {
             />
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
             />
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}
             />
         </>
     );
 }
-
