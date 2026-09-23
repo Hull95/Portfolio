@@ -52,9 +52,14 @@ export async function POST(request: NextRequest) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
+    // Until a domain is verified at resend.com/domains, Resend only allows
+    // sending from onboarding@resend.dev to the account owner's own address.
+    const from = process.env.RESEND_FROM || 'Contact Form <onboarding@resend.dev>';
+
     const { data, error } = await resend.emails.send({
-      from: 'Contact Form <onboarding@resend.dev>',
+      from,
       to: [process.env.CONTACT_EMAIL],
+      replyTo: email,
       subject:  `📩 New Contact from ${name} ${surname}`,
       html: `
         <h2>New Contact Form Submission</h2>
